@@ -2,6 +2,19 @@
 
 SELECT * from animals WHERE name = 'Luna';
 
+
+
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+SELECT * FROM animals;
+SAVEPOINT spoint1;
+UPDATE animals SET weight_kg = weight_kg * -1;
+SELECT * FROM animals;
+ROLLBACK TO spoint1;
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg  0;
+COMMIT;
+
+
+-- aggregrate
 SELECT * FROM WHERE name LIKE '%mon%'; 
 SELECT * FROM animals WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-30'; 
 SELECT * FROM animals WHERE (neutered = t) AND (escape_attempt < 3);   
@@ -10,7 +23,15 @@ SELECT date_of_birth FROM animals WHERE (name ='Agumon') OR (name = 'Pikachu');
 SELECT name, escape_attempt FROM animals WHERE (weight_kg < 10.5);   
 SELECT * FROM animals WHERE (neutered = 't');    
 SELECT * FROM animals WHERE (name != 'Gabumon');   
-SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;   
+SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3; 
+
+-- transaction
+BEGIN;
+UPDATE animals SET species = 'unspecified';
+SELECT species FROM animals;
+ROLLBACK;
+SELECT species FROM animals
+
 
 -- query and update animals table
 SELECT COUNT(*) FROM animals; 
