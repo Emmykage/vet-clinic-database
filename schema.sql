@@ -9,4 +9,4 @@ CREATE TABLE animals (
     weight_kg DECIMAL(5,2)     
    
     
-);                                                                                                                                       vet_clinic(# 
+);                                                                                  ALTER TABLE animals ADD COLUMN species VARCHAR(50);
