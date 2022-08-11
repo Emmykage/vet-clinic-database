@@ -14,17 +14,15 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Menanya Morris**
 
 - GitHub: [@emmykage](https://github.com/Emmykage)
 - Twitter: [@mennydev](https://twitter.com/mennydev)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
 
-- GitHub: [@mennydev](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [Menanya Morris](https://linkedin.com/in/morris-menanya)
+
+
 
 ## 🤝 Contributing
 
