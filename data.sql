@@ -70,10 +70,10 @@ INSERT INTO specializations (species_id, vet_id) VALUES
 
 
 -- Insert the following data for visits: 
-INSERT INTO visit (animal_id, vet_id, visit_date) VALUES
+INSERT INTO visits (animal_id, vet_id, visit_date) VALUES
 ((SELECT id FROM animals WHERE name='Agumon'),(SELECT id FROM vets WHERE name='William Tatcher'), '2020-05-24'),
 ((SELECT id FROM animals WHERE name='Agumon'), (SELECT id FROM vets WHERE name='Stephanie Mendez'), '2020-07-22'),
-((SELECT id FROM animals WHERE name='Gabumon'), (SELECT id FROM vets WHERE name='Jack Haarkness'), '2021-02-02'),
+((SELECT id FROM animals WHERE name='Gabumon'), (SELECT id FROM vets WHERE name='Jack Harkness'), '2021-02-02'),
 ((SELECT id FROM animals WHERE name='Pikachu'), (SELECT id FROM vets WHERE name='Maisy Smith'), '2020-01-05'),
 ((SELECT id FROM animals WHERE name='Pikachu'), (SELECT id FROM vets WHERE name='Maisy Smith'), '2020-03-08'),
 ((SELECT id FROM animals WHERE name='Pikachu'), (SELECT id FROM vets WHERE name='Maisy Smith'), '2020-05-14'),
