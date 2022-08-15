@@ -21,3 +21,35 @@ INSERT INTO animals (name, date_of_birth, escape_attempt, weight_kg, neutered) V
 INSERT INTO animals (name, date_of_birth, escape_attempt, weight_kg, neutered) VALUES('Boarmon','2005-06-12', 7, 20.4, true);       
  INSERT INTO animals (name, date_of_birth, escape_attempt, weight_kg, neutered) VALUES('Blossom','1998-10-13', 3, 17, true);          
  INSERT INTO animals (name, date_of_birth, escape_attempt, weight_kg, neutered) VALUES('Ditto','2022-05-14', 4, 22, true);  
+
+
+--  insert into owners table
+INSERT INTO owners(full_name, age) VALUES ('Sam Smith', 34),('Jennifer Orwell', 19),('Bob', 45),('Melody Pond', 77), ('Dean Winchester', 14), ('Jodie Whittaker', 38);  
+INSERT INTO species(name) VALUES ('Pokemon'),('Digimon'); 
+
+-- modify inserted animals so it includes species_id
+UPDATE animals SET species_id= (SELECT id FROM species WHERE name='Digimon') WHERE name LIKE '%mon%'; 
+UPDATE animals SET species_id= (SELECT id FROM species WHERE name='Pokemon') WHERE name NOT LIKE '%mon%'; 
+
+-- modify inserted animals to include owner information
+-- Sam Smith owns Agumon
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Sam Smith' ) WHERE name='Agumon' RETURNING*;
+
+-- Jennifer Orwell owns GAbumon
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell') WHERE name LIKE 'Gabumon' RETURNING *;
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell') WHERE name LIKE 'Pikachu' RETURNING *;
+
+-- Bob own Devimon and Plantmon 
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Bob') WHERE name LIKE 'Devimon' RETURNING *;
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Bob') WHERE name LIKE 'Plantmon' RETURNING *;
+
+-- Melody Pond own Charmander, Sqirtle and Blossom 
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Melody Pond') WHERE name Like 'Charmander' RETURNING *;
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Melody Pond') WHERE name Like 'Squirtle' RETURNING *;
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Melody Pond') WHERE name Like 'Blossom' RETURNING *;
+
+-- Dean Winchester owns Angemon and Boarmon.
+
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Dean Winchester') WHERE name Like 'Angemon' RETURNING *;
+UPDATE animals SET owner_id= (SELECT id FROM owners WHERE full_name = 'Dean Winchester') WHERE name Like 'Boarmon' RETURNING *;
+
