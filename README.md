@@ -1,4 +1,5 @@
 # Vet_Clinic Database
+![vet_clinic(2)](https://user-images.githubusercontent.com/97867917/184980883-8f68b30c-766b-4e90-96e2-c151277d8bc3.png)
 
 > This repo holds t a database for pet animals registered to this particular clinic. they contain pet names, date of birth, number of times pets have tried to escape, weight of pets and their neutered status.
 >
