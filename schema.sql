@@ -38,3 +38,13 @@ ALTER TABLE animals ADD COLUMN species_id INT REFERENCES species(id);
         vet_id INT REFERENCES vets(id),
         visit_date DATE 
         );  
+
+        --Modify owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- CREATE INDEXES
+CREATE INDEX ON visits(animal_id);
+
+CREATE INDEX ON visits(vet_id);
+
+CREATE INDEX owners_email_asc ON owners (email)
